@@ -26,7 +26,7 @@ steps:
   inputs:
     targetType: 'inline'
     workingDirectory: $(System.DefaultWorkingDirectory)
-    script: 'checkov -d . -o junitxml > scan-results.xml'
+    script: 'checkov -f av-ec2.tf'
   displayName: Checkov source code scan
   continueOnError: true
 
