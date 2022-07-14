@@ -22,11 +22,11 @@ steps:
     script: 'pip3 install checkov'
   displayName: Install checkov
 
-  - task: Bash@3
-    inputs:
-      targetType: 'inline'
-      workingDirectory: $(System.DefaultWorkingDirectory)
-      script: 'checkov -d . -o junitxml > scan-results.xml'
-    displayName: Checkov source code scan
-    continueOnError: true
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    workingDirectory: $(System.DefaultWorkingDirectory)
+    script: 'checkov -d . -o junitxml > scan-results.xml'
+  displayName: Checkov source code scan
+  continueOnError: true
 
