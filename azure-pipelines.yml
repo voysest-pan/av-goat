@@ -26,7 +26,7 @@ steps:
   inputs:
     targetType: 'inline'
     workingDirectory: $(System.DefaultWorkingDirectory)
-    script: 'checkov -f av-aws-resources.tf --skip-check CKV_DOCKER_*'
+    script: 'checkov -f av-aws-resources.tf --skip-check CKV_DOCKER_* --output junitxml > $(System.DefaultWorkingDirectory)/Checkov-Report.xml'
   displayName: Checkov source code scan
   continueOnError: true
 
