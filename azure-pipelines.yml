@@ -30,3 +30,14 @@ steps:
   displayName: Checkov source code scan
   continueOnError: true
 
+- task: PublishTestResults@2
+  displayName: Publish Checkov Test Results
+  condition: succeededOrFailed()
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/Checkov-Report.xml'
+    testRunTitle: Checkov Scan
+    mergeTestResults: false
+    failTaskOnFailedTests: false
+    publishRunAttachments: true
+
