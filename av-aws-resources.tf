@@ -32,7 +32,7 @@ module "network" {
       name = "allow_ssh"
       priority = 100
       direction = "inbound"
-      access = "Deny"
+      access = "Allow"
       protocol = "Tcp"
       source_port_range = "*"
       source_address_prefix = "*"
