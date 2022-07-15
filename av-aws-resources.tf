@@ -22,3 +22,20 @@ module "network" {
 
   depends_on = [azurerm_resource_group.vnet]
 }
+
+  resource "azurerm_network_security_group" "allow_ssh" {
+    name = "allow_ssh"
+    location = var.region
+    resource_group_name = azurerm_resource_group.vnet.name
+    
+    security_rule {
+      name = "allow_ssh"
+      priority = 100
+      direction = "Allow"
+      protocol = "Tcp"
+      source_port_range = "*"
+      source_address_prefix = "*"
+      destination_port_range = "22"
+      destination_address_prefix = "*"
+    }
+  }
