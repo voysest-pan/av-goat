@@ -31,7 +31,8 @@ module "network" {
     security_rule {
       name = "allow_ssh"
       priority = 100
-      direction = "Allow"
+      direction = "inbound"
+      access = "Allow"
       protocol = "Tcp"
       source_port_range = "*"
       source_address_prefix = "*"
