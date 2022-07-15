@@ -26,7 +26,7 @@ steps:
   inputs:
     targetType: 'inline'
     workingDirectory: $(System.DefaultWorkingDirectory)
-    script: 'checkov -f av-ec2.tf --skip-check CKV_DOCKER_*'
+    script: 'checkov -f av-s3.tf --skip-check CKV_DOCKER_*'
   displayName: Checkov source code scan
   continueOnError: true
 
