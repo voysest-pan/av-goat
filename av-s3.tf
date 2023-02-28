@@ -15,8 +15,8 @@ resource "aws_s3_bucket" "data" {
     git_last_modified_at = "2020-06-16 14:46:24"
     git_last_modified_by = "nimrodkor@gmail.com"
     git_modifiers        = "nimrodkor"
-    git_org              = "bridgecrewio"
-    git_repo             = "terragoat"
+    git_org              = "voysest-pan"
+    git_repo             = "av-goat"
     yor_trace            = "0874007d-903a-4b4c-945f-c9c233e13243"
   })
 }
